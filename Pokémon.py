@@ -26,8 +26,5 @@ class Typen:
                 return -0.2
         return None
 
-    def Typendatenbank(self):
-        pass
-        #Wasser
-        #Feuer
-        #Pflanze
+def Typenabfrage():
+    return ["Wasser", "Feuer", "Pflanze"]

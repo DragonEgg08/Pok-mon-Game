@@ -1,3 +1,5 @@
+from array import ArrayType
+
 from Pokémon import Pokémon
 import random
 pkm_pool = [
@@ -16,8 +18,9 @@ pkm_pool = [
     Pokémon("Maskagato", "Pflanze", "", 300),
     Pokémon("Serpiroyal", "Pflanze", "", 300),
     ]
-def Pool() -> Pokémon:
-    Random_Nummer = random.randint(0, len(pkm_pool))
+def Pool():
+    """Random_Nummer = random.randint(0, len(pkm_pool))
     Ausgewähltes_Pokémon = pkm_pool[Random_Nummer]
     pkm_pool.pop(Random_Nummer)
-    return Ausgewähltes_Pokémon
+    return Ausgewähltes_Pokémon"""
+    return pkm_pool
