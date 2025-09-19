@@ -7,7 +7,7 @@ class Pokémon:
 
 class Typen:
     def __init__(self):
-        pass
+        self.name
     def Schwächen_Stärken(self, typ, typ_gegner) -> float | None:
         if typ == "Wasser" or typ == "Feuer" and typ_gegner == "Wasser" or typ_gegner == "Feuer":
             if typ == "Wasser":
@@ -26,5 +26,17 @@ class Typen:
                 return -0.2
         return None
 
-def Typenabfrage():
-    return ["Wasser", "Feuer", "Pflanze"]
+def Typen_hinzufügen():
+    return "Wasser", "Feuer", "Pflanze"
+
+class Attacken():
+    def __init__(self, name, schaden, nutzungslimit, typ):
+        self.name = name
+        self.schaden = schaden
+        self.nutzungslimit = nutzungslimit
+        self.typ = typ
+
+def Attacken_hinzufügen():
+    Attacken_list = []
+    Attacken_list.append(Attacken("Glut", 70, 15, "Feuer"))
+    return Attacken_list

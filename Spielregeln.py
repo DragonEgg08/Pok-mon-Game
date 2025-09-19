@@ -1,6 +1,6 @@
 import random
 from Spieler import Spieler
-from Pokémon import Typenabfrage
+from Pokémon import Typen_hinzufügen
 
 #Würfeln für Vorspiel
 def würfeln() -> int:
@@ -24,20 +24,24 @@ def Würfelwurf(Spieler1: Spieler, Spieler2: Spieler) -> bool:
             break
     return Spieler1_gewonnen
 
-def Pokémon_auswählen(Alle_Pokémon, Spieler:Spieler):
-    Typen_Reihenfolge = Typenabfrage()
-    Typen_Menge = len(Typen_Reihenfolge)
-    Typen_Print_Zähler = 0
-    print(f"{Spieler.name} würfelt\n")
-    print(f"\n{Typen_Reihenfolge[0]}")
-    for i in range(len(Alle_Pokémon)):
-        print(f"{i+1}. {Alle_Pokémon[i].name}")
-        #Berechnung unten noch falsch
-        if i != 0 and Typen_Menge / i == int(Typen_Menge / i):
-            print({Typen_Reihenfolge[Typen_Print_Zähler] + "\n"})
-            Typen_Print_Zähler += 1
+def Pokémon_auswählen(Alle_Pokémon, Spieler:Spieler, Random):
+    if Random:
+        Zahl = random.randint(0, len(Alle_Pokémon))
+        Spieler.pokémon.append(Alle_Pokémon[Zahl])
+        print(f"{Spieler.name} bekommt als random Pokémon {Spieler.pokémon[-1].name}")
+        Alle_Pokémon.pop(Zahl)
+    else:
+        Typen_Reihenfolge = Typen_hinzufügen()
+        Pokémon_print_Zähler = 1
+        print(f"{Spieler.name} wählt ein Pokémon\n")
+        print(Typen_Reihenfolge[0])
+        for i in Typen_Reihenfolge:
+            print("\n" + i)
+            for a in Alle_Pokémon:
+                if a.typ == i:
+                    print(f"{Pokémon_print_Zähler}. {a.name}")
+                    Pokémon_print_Zähler += 1
 
-
-    Auswahl = int(input("Gib eine Zahl für das Pokémon ein: "))
-    Spieler.pokémon.append(Alle_Pokémon[Auswahl-1])
-    Alle_Pokémon.pop(Auswahl-1)
+        Auswahl = int(input("Gib eine Zahl für das Pokémon ein: "))
+        Spieler.pokémon.append(Alle_Pokémon[Auswahl-1])
+        Alle_Pokémon.pop(Auswahl-1)
