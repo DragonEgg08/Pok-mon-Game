@@ -3,8 +3,8 @@ from Pokémon_Pool import Pool
 from Pokémon import Attacken_hinzufügen
 from Spielregeln import Würfelwurf, Pokémon_auswählen
 
-Spieler1 = Spieler("Rot")
-Spieler2 = Spieler("Blau")
+Spieler1 = Spieler("Sky")
+Spieler2 = Spieler("Elias")
 Alle_Pokémon = Pool()
 Attacken = Attacken_hinzufügen()
 

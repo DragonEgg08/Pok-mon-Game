@@ -27,6 +27,7 @@ def Würfelwurf(Spieler1: Spieler, Spieler2: Spieler) -> bool:
 def Pokémon_auswählen(Alle_Pokémon, Spieler:Spieler, Random):
     if Random:
         Zahl = random.randint(0, len(Alle_Pokémon))
+        print(Zahl)
         Spieler.pokémon.append(Alle_Pokémon[Zahl])
         print(f"{Spieler.name} bekommt als random Pokémon {Spieler.pokémon[-1].name}")
         Alle_Pokémon.pop(Zahl)
