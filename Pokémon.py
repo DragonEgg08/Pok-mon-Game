@@ -38,5 +38,16 @@ class Attacken():
 
 def Attacken_hinzufügen():
     Attacken_list = []
+    #Normal
+    Attacken_list.append(Attacken("Tackle", 70, 15, "Normal"))
+    Attacken_list.append(Attacken("Bodyslam", 125, 5, "Normal"))
+    #Feuer
     Attacken_list.append(Attacken("Glut", 70, 15, "Feuer"))
+    Attacken_list.append(Attacken("Flammenwurf", 125, 5, "Feuer"))
+    #Wasser
+    Attacken_list.append(Attacken("Blubber", 70, 15, "Wasser"))
+    Attacken_list.append(Attacken("Hydropumpe", 125, 5, "Wasser"))
+    #Pflanze
+    Attacken_list.append(Attacken("Rankenhieb", 70, 15, "Pflanze"))
+    Attacken_list.append(Attacken("Energieball", 125, 5, "Pflanze"))
     return Attacken_list
