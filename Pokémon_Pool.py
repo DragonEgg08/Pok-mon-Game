@@ -18,6 +18,9 @@ pkm_pool = [
     Pokémon("Maskagato", "Pflanze", "", 300),
     Pokémon("Serpiroyal", "Pflanze", "", 300),
     ]
+#Guardevoir
+#Kapu-Fala
+
 def Pool():
     """Random_Nummer = random.randint(0, len(pkm_pool))
     Ausgewähltes_Pokémon = pkm_pool[Random_Nummer]
