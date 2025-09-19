@@ -8,6 +8,7 @@ Spieler2 = Spieler("Blau")
 Alle_Pokémon = Pool()
 Attacken = Attacken_hinzufügen()
 
+#Würfeln um Pokémon auszuwählen
 for i in range(3):
     Wurf = Würfelwurf(Spieler1, Spieler2)
     if Wurf:
@@ -20,5 +21,4 @@ for i in range(3):
         Pokémon_auswählen(Alle_Pokémon, Spieler2, False)
         print(f"{Spieler1.name} hat verloren")
         Pokémon_auswählen(Alle_Pokémon, Spieler1, True)
-
 
