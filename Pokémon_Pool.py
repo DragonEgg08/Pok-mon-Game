@@ -17,6 +17,9 @@ pkm_pool = [
     Pokémon("Silvaro", "Pflanze", "", 300),
     Pokémon("Maskagato", "Pflanze", "", 300),
     Pokémon("Serpiroyal", "Pflanze", "", 300),
+
+    #Psycho-Pokémon
+    Pokémon("Guardevoir", "Pflanze", "", 400)
     ]
 #Guardevoir
 #Kapu-Fala
