@@ -1,7 +1,14 @@
+import Pokémon
 from Spieler import Spieler
 from Pokémon_Pool import Pool
 from Pokémon import Attacken_hinzufügen
 from Spielregeln import Würfelwurf, Pokémon_auswählen
+
+Guar = Pokémon.Pokémon("Guardevoir", "Pflanze", [], 400)
+Pokémon.Attacken_hinzufügen(Guar)
+for i in Guar.attacken:
+    print(i.name)
+exit()
 
 Spieler1 = Spieler("Sky")
 Spieler2 = Spieler("Elias")
@@ -22,3 +29,19 @@ for i in range(3):
         print(f"{Spieler1.name} hat verloren")
         Pokémon_auswählen(Alle_Pokémon, Spieler1, True)
 
+#Pokémon Kampf
+S1_Kampf_Pokémon = ""
+S2_Kampf_Pokémon = ""
+while True:
+    #Spieler Pokémon auswahl
+    if S1_Kampf_Pokémon == "":
+        for i in range(len(Spieler1.pokémon)):
+            print(f"{i+1} {Spieler1.pokémon[i].name}")
+        S1_Kampf_Pokémon = Spieler1.pokémon[int(input("Zahl des Pokémon auswählen: "))-1]
+
+    if S2_Kampf_Pokémon == "":
+        for i in range(len(Spieler2.pokémon)):
+            print(f"{i + 1} {Spieler2.pokémon[i].name}")
+        S2_Kampf_Pokémon = Spieler2.pokémon[int(input("Zahl des Pokémon auswählen: ")) - 1]
+
+    #Kampf

@@ -1,3 +1,6 @@
+import random
+
+
 class Pokémon:
     def __init__(self, name:str, typ:str, attacken:str, hp:int):
         self.name = name
@@ -36,7 +39,7 @@ class Attacken():
         self.nutzungslimit = nutzungslimit
         self.typ = typ
 
-def Attacken_hinzufügen():
+def Attacken_hinzufügen(Pokémon:Pokémon):
     Attacken_list = []
     #Normal
     Attacken_list.append(Attacken("Tackle", 70, 15, "Normal"))
@@ -50,4 +53,24 @@ def Attacken_hinzufügen():
     #Pflanze
     Attacken_list.append(Attacken("Rankenhieb", 70, 15, "Pflanze"))
     Attacken_list.append(Attacken("Energieball", 125, 5, "Pflanze"))
-    return Attacken_list
+
+    Attacken_ausgewählt = []
+    for i in range(2):
+        #Normal-Attacken
+        for a in range(2):
+            while True:
+                Random = random.randint(0, len(Attacken_list))-1
+                Temp = Attacken_list[Random].typ
+                if Temp == "Normal":
+                    Pokémon.attacken.append(Attacken_list[Random])
+                    Attacken_list.pop(Random)
+                break
+        #Typ-Attacken
+        for a in range(2):
+            while True:
+                Random = random.randint(0, len(Attacken_list))-1
+                Temp = Attacken_list[Random].typ
+                if Temp == Pokémon.typ:
+                    Pokémon.attacken.append(Attacken_list[Random])
+                    Attacken_list.pop(Random)
+                break
