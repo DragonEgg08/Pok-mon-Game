@@ -38,3 +38,4 @@ while True:
         S2_Kampf_Pokémon = Spieler2.pokémon[int(input("Zahl des Pokémon auswählen: ")) - 1]
 
     #Kampf
+

@@ -27,7 +27,7 @@ class Typen:
                 return 0.2
             else:
                 return -0.2
-        return None
+        return 0
 
 def Typen_hinzufügen():
     return "Wasser", "Feuer", "Pflanze"
