@@ -11,23 +11,27 @@ class Pokémon:
 class Typen:
     def __init__(self):
         self.name
-    def Schwächen_Stärken(self, typ, typ_gegner) -> float | None:
-        if typ == "Wasser" or typ == "Feuer" and typ_gegner == "Wasser" or typ_gegner == "Feuer":
-            if typ == "Wasser":
-                return 0.2
-            else:
-                return -0.2
-        elif typ == "Wasser" or typ == "Pflanze" and typ_gegner == "Wasser" or typ_gegner == "Pflanze":
-            if typ == "Pflanze":
-                return 0.2
-            else:
-                return -0.2
-        elif typ == "Pflanze" or typ == "Feuer" and typ_gegner == "Pflanze" or typ_gegner == "Feuer":
-            if typ == "Feuer":
-                return 0.2
-            else:
-                return -0.2
-        return 0
+
+
+def Schwächen_Stärken(typ, typ_gegner) -> float | None:
+    print(typ)
+    print(typ_gegner)
+    if typ == "Wasser" or typ == "Feuer" and typ_gegner == "Wasser" or typ_gegner == "Feuer":
+        if typ == "Wasser":
+            return 0.2
+        else:
+            return -0.2
+    elif typ == "Wasser" or typ == "Pflanze" and typ_gegner == "Wasser" or typ_gegner == "Pflanze":
+        if typ == "Pflanze":
+            return 0.2
+        else:
+            return -0.2
+    elif typ == "Pflanze" or typ == "Feuer" and typ_gegner == "Pflanze" or typ_gegner == "Feuer":
+        if typ == "Feuer":
+            return 0.2
+        else:
+            return -0.2
+    return 0
 
 def Typen_hinzufügen():
     return "Wasser", "Feuer", "Pflanze"

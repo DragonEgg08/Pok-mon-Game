@@ -1,6 +1,6 @@
 import random
 from Spieler import Spieler
-from Pokémon import Typen_hinzufügen, Pokémon, Attacken, Typen
+from Pokémon import Typen_hinzufügen, Pokémon, Attacken, Schwächen_Stärken
 
 #Würfeln für Vorspiel
 def würfeln() -> int:
@@ -48,10 +48,11 @@ def Pokémon_auswählen(Alle_Pokémon, Spieler:Spieler, Random):
         Alle_Pokémon.pop(Auswahl-1)
 
 def Kampf(Pokémon, Pokémon_Gegner:Pokémon):
-    for i in range(Pokémon.attacken):
-        print(f"{i+1}. {Pokémon.attacken[i]}")
+    for i in range(len(Pokémon.attacken)):
+        print(f"{i+1}. {Pokémon.attacken[i].name}")
     Attacke:Attacken = Pokémon.attacken[int(input("Wähle eine Attacke aus: "))-1]
-    Resistenz = int(Typen.Schwächen_Stärken(Pokémon.typ, Pokémon_Gegner.typ))
+    Resistenz = int(Schwächen_Stärken(Pokémon.typ, Pokémon_Gegner.typ))
+    print(Resistenz)
 
     if Resistenz != 0:
         Pokémon_Gegner.hp -= (Attacke.schaden-Attacke.schaden*Resistenz)
