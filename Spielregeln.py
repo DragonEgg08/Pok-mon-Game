@@ -46,3 +46,6 @@ def Pokémon_auswählen(Alle_Pokémon, Spieler:Spieler, Random):
         Auswahl = int(input("Gib eine Zahl für das Pokémon ein: "))
         Spieler.pokémon.append(Alle_Pokémon[Auswahl-1])
         Alle_Pokémon.pop(Auswahl-1)
+
+def Kampf():
+    pass

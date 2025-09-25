@@ -4,16 +4,9 @@ from Pokémon_Pool import Pool
 from Pokémon import Attacken_hinzufügen
 from Spielregeln import Würfelwurf, Pokémon_auswählen
 
-Guar = Pokémon.Pokémon("Guardevoir", "Pflanze", [], 400)
-Pokémon.Attacken_hinzufügen(Guar)
-for i in Guar.attacken:
-    print(i.name)
-exit()
-
 Spieler1 = Spieler("Sky")
 Spieler2 = Spieler("Elias")
 Alle_Pokémon = Pool()
-Attacken = Attacken_hinzufügen()
 
 #Würfeln um Pokémon auszuwählen
 for i in range(3):
