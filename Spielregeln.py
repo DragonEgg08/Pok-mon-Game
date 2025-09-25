@@ -54,6 +54,7 @@ def Kampf(Pokémon, Pokémon_Gegner:Pokémon):
     Resistenz = int(Schwächen_Stärken(Pokémon.typ, Pokémon_Gegner.typ))
     print(Resistenz)
 
+    #Resistenz noch defekt
     if Resistenz != 0:
         Pokémon_Gegner.hp -= (Attacke.schaden-Attacke.schaden*Resistenz)
     else:

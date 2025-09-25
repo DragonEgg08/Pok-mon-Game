@@ -37,8 +37,9 @@ while True:
         for i in range(len(Spieler2.pokémon)):
             print(f"{i + 1} {Spieler2.pokémon[i].name}")
         S2_Kampf_Pokémon = Spieler2.pokémon[int(input(f"{Spieler2.name}, Kampfpokémon auswählen: ")) - 1]
-
+    if len(S1_Kampf_Pokémon.attacken) == 0:
         Pokémon.Attacken_hinzufügen(S1_Kampf_Pokémon)
         Pokémon.Attacken_hinzufügen(S2_Kampf_Pokémon)
 
     Spielregeln.Kampf(S1_Kampf_Pokémon, S2_Kampf_Pokémon)
+    Spielregeln.Kampf(S2_Kampf_Pokémon, S1_Kampf_Pokémon)
