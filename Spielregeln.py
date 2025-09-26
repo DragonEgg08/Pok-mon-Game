@@ -26,7 +26,7 @@ def Würfelwurf(Spieler1: Spieler, Spieler2: Spieler) -> bool:
 
 def Pokémon_auswählen(Alle_Pokémon, Spieler:Spieler, Random):
     if Random:
-        Zahl = random.randint(0, len(Alle_Pokémon))
+        Zahl = random.randint(0, len(Alle_Pokémon)-1)
         print(Zahl)
         Spieler.pokémon.append(Alle_Pokémon[Zahl])
         print(f"{Spieler.name} bekommt als random Pokémon {Spieler.pokémon[-1].name}")
@@ -47,12 +47,13 @@ def Pokémon_auswählen(Alle_Pokémon, Spieler:Spieler, Random):
         Spieler.pokémon.append(Alle_Pokémon[Auswahl-1])
         Alle_Pokémon.pop(Auswahl-1)
 
-def Kampf(Pokémon, Pokémon_Gegner:Pokémon):
+def Kampf(Spieler, Pokémon, Pokémon_Gegner:Pokémon):
     for i in range(len(Pokémon.attacken)):
         print(f"{i+1}. {Pokémon.attacken[i].name}")
-    Attacke:Attacken = Pokémon.attacken[int(input("Wähle eine Attacke aus: "))-1]
+    print(f"Info: {Pokémon.name}, {Pokémon.hp} HP, ")
+    Attacke:Attacken = Pokémon.attacken[int(input(f"{Spieler.name}, wähle eine Attacke für aus: "))-1]
     Resistenz = int(Schwächen_Stärken(Pokémon.typ, Pokémon_Gegner.typ))
-    print(Resistenz)
+
 
     #Resistenz noch defekt
     if Resistenz != 0:

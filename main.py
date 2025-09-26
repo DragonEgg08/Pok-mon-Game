@@ -24,22 +24,34 @@ for i in range(3):
         Pokémon_auswählen(Alle_Pokémon, Spieler1, True)
 
 #Pokémon Kampf
-S1_Kampf_Pokémon = ""
-S2_Kampf_Pokémon = ""
+for i in range(len(Spieler1.pokémon)):
+    print(f"{i + 1} {Spieler1.pokémon[i].name}")
+S1_Kampf_Pokémon = Spieler1.pokémon[int(input(f"{Spieler1.name}, Kampfpokémon auswählen: ")) - 1]
+for i in range(len(Spieler2.pokémon)):
+    print(f"{i + 1} {Spieler2.pokémon[i].name}")
+S2_Kampf_Pokémon = Spieler2.pokémon[int(input(f"{Spieler2.name}, Kampfpokémon auswählen: ")) - 1]
+
+
 while True:
     #Spieler Pokémon auswahl
-    if S1_Kampf_Pokémon == "":
+    if S1_Kampf_Pokémon.hp <= 0:
         for i in range(len(Spieler1.pokémon)):
-            print(f"{i+1} {Spieler1.pokémon[i].name}")
-        S1_Kampf_Pokémon = Spieler1.pokémon[int(input(f"{Spieler1.name}, Kampfpokémon auswählen: "))-1]
-
-    if S2_Kampf_Pokémon == "":
+            if Spieler1.pokémon[i] == S1_Kampf_Pokémon:
+                Spieler1.pokémon.pop(i)
+                for i in range(len(Spieler1.pokémon)):
+                    print(f"{i + 1} {Spieler1.pokémon[i].name}")
+                S1_Kampf_Pokémon = Spieler1.pokémon[int(input(f"{Spieler1.name}, Kampfpokémon auswählen: ")) - 1]
+    if S2_Kampf_Pokémon.hp <= 0:
         for i in range(len(Spieler2.pokémon)):
-            print(f"{i + 1} {Spieler2.pokémon[i].name}")
-        S2_Kampf_Pokémon = Spieler2.pokémon[int(input(f"{Spieler2.name}, Kampfpokémon auswählen: ")) - 1]
+            if Spieler2.pokémon[i] == S2_Kampf_Pokémon:
+                Spieler2.pokémon.pop(i)
+            for i in range(len(Spieler2.pokémon)):
+                print(f"{i + 1} {Spieler2.pokémon[i].name}")
+            S2_Kampf_Pokémon = Spieler2.pokémon[int(input(f"{Spieler2.name}, Kampfpokémon auswählen: ")) - 1]
+
     if len(S1_Kampf_Pokémon.attacken) == 0:
         Pokémon.Attacken_hinzufügen(S1_Kampf_Pokémon)
         Pokémon.Attacken_hinzufügen(S2_Kampf_Pokémon)
 
-    Spielregeln.Kampf(S1_Kampf_Pokémon, S2_Kampf_Pokémon)
-    Spielregeln.Kampf(S2_Kampf_Pokémon, S1_Kampf_Pokémon)
+    Spielregeln.Kampf(Spieler1, S1_Kampf_Pokémon, S2_Kampf_Pokémon)
+    Spielregeln.Kampf(Spieler2, S2_Kampf_Pokémon, S1_Kampf_Pokémon)
