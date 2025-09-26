@@ -37,19 +37,15 @@ S2_Kampf_Pokémon = Spieler2.pokémon[S2_Pokémon_Index]
 while True:
     #Spieler Pokémon auswahl
     if S1_Kampf_Pokémon.hp <= 0:
-        for i in range(len(Spieler1.pokémon)):
-            if Spieler1.pokémon[i] == S1_Kampf_Pokémon:
-                Spieler1.pokémon.pop(i)
-                for i in range(len(Spieler1.pokémon)):
-                    print(f"{i + 1} {Spieler1.pokémon[i].name}")
-                S1_Kampf_Pokémon = Spieler1.pokémon[int(input(f"{Spieler1.name}, Kampfpokémon auswählen: ")) - 1]
+            Spieler1.pokémon.pop(S1_Pokémon_Index)
+            for i in range(len(Spieler1.pokémon)):
+                print(f"{i + 1} {Spieler1.pokémon[i].name}")
+            S1_Kampf_Pokémon = Spieler1.pokémon[int(input(f"{Spieler1.name}, Kampfpokémon auswählen: ")) - 1]
     if S2_Kampf_Pokémon.hp <= 0:
+        Spieler2.pokémon.pop(S2_Pokémon_Index)
         for i in range(len(Spieler2.pokémon)):
-            if Spieler2.pokémon[i] == S2_Kampf_Pokémon:
-                Spieler2.pokémon.pop(i)
-            for i in range(len(Spieler2.pokémon)):
-                print(f"{i + 1} {Spieler2.pokémon[i].name}")
-            S2_Kampf_Pokémon = Spieler2.pokémon[int(input(f"{Spieler2.name}, Kampfpokémon auswählen: ")) - 1]
+            print(f"{i + 1} {Spieler2.pokémon[i].name}")
+        S2_Kampf_Pokémon = Spieler2.pokémon[int(input(f"{Spieler2.name}, Kampfpokémon auswählen: ")) - 1]
 
     if len(S1_Kampf_Pokémon.attacken) == 0:
         Pokémon.Attacken_hinzufügen(S1_Kampf_Pokémon)
