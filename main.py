@@ -26,10 +26,12 @@ for i in range(3):
 #Pokémon Kampf
 for i in range(len(Spieler1.pokémon)):
     print(f"{i + 1} {Spieler1.pokémon[i].name}")
-S1_Kampf_Pokémon = Spieler1.pokémon[int(input(f"{Spieler1.name}, Kampfpokémon auswählen: ")) - 1]
+S1_Pokémon_Index = int(input(f"{Spieler1.name}, Kampfpokémon auswählen: ")) - 1
+S1_Kampf_Pokémon = Spieler1.pokémon[S1_Pokémon_Index]
 for i in range(len(Spieler2.pokémon)):
     print(f"{i + 1} {Spieler2.pokémon[i].name}")
-S2_Kampf_Pokémon = Spieler2.pokémon[int(input(f"{Spieler2.name}, Kampfpokémon auswählen: ")) - 1]
+S2_Pokémon_Index = int(input(f"{Spieler2.name}, Kampfpokémon auswählen: ")) - 1
+S2_Kampf_Pokémon = Spieler2.pokémon[S2_Pokémon_Index]
 
 
 while True:
